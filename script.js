@@ -69,3 +69,27 @@ const sc=(h.scrollTop)/(h.scrollHeight-h.clientHeight);
 document.getElementById("progress").style.width=(sc*100)+"%";
 
 });
+
+/* Scroll Reveal */
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".research-card,.timeline-item,.publication").forEach(el=>{
+
+el.classList.add("hidden");
+
+observer.observe(el);
+
+});
