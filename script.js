@@ -93,3 +93,21 @@ el.classList.add("hidden");
 observer.observe(el);
 
 });
+
+/*============================*/
+
+document.getElementById("theme").onclick=()=>{
+
+document.body.classList.toggle("light");
+
+};
+
+const ham=document.getElementById("hamburger");
+
+const menu=document.getElementById("menu");
+
+ham.onclick=()=>{
+
+menu.classList.toggle("active");
+
+};
