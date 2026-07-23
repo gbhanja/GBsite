@@ -22,5 +22,5 @@ A modern academic portfolio website inspired by professional researcher pages.
 
 Your site will be live at:
 
-https://gbhanja.github.io/GBsite
+https://gbhanja.github.io/GBsite/
 
