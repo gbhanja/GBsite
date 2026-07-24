@@ -9,10 +9,10 @@ Typing Animation
 --------------------------------*/
 
 const words = [
-  "Quantum Information Theory",
-  "Open Quantum Systems",
+  "Quantum Optics",
   "Quantum Thermodynamics",
-  "Quantum Batteries"
+  "Open Quantum Systems",
+  "Quantum Information"
 ];
 
 const typing = document.getElementById("typing");
