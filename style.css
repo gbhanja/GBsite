@@ -1164,11 +1164,11 @@ transform:scale(1.05);
 }
 
 .gallery-left-focus{
-object-position:left center;
+object-position:left top;
 }
 
 .gallery-right-focus{
-object-position:right center;
+object-position:right top;
 }
 
 /*==================================================
