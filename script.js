@@ -419,6 +419,140 @@ navbar.style.background="rgba(7,19,33,.75)";
 });
 
 /*==================================================
+Contact Form Submission
+==================================================*/
+
+const contactForm = document.getElementById("contact-form");
+
+const formStatus = document.getElementById("form-status");
+
+const submitButton = contactForm?.querySelector("button[type='submit']");
+
+function setFormState(isSending) {
+
+if (!contactForm || !submitButton) return;
+
+const buttonLabel = submitButton.querySelector(".button-label");
+
+submitButton.disabled = isSending;
+
+submitButton.classList.toggle("is-loading", isSending);
+
+if (buttonLabel) {
+
+buttonLabel.textContent = isSending ? "Sending..." : "Send Message";
+
+}
+
+}
+
+function showFormStatus(message, type = "") {
+
+if (!formStatus) return;
+
+formStatus.textContent = message;
+
+formStatus.className = `form-status ${type}`.trim();
+
+}
+
+if (contactForm) {
+
+contactForm.addEventListener("submit", async (event) => {
+
+event.preventDefault();
+
+const formData = new FormData(contactForm);
+
+const name = (formData.get("name") || "").toString().trim();
+
+const email = (formData.get("email") || "").toString().trim();
+
+const subject = (formData.get("subject") || "").toString().trim();
+
+const message = (formData.get("message") || "").toString().trim();
+
+const honey = (formData.get("_honey") || "").toString().trim();
+
+if (!name || !email || !message) {
+
+showFormStatus("Please fill in your name, email, and message.", "error");
+
+return;
+
+}
+
+if (honey) {
+
+showFormStatus("Your message was flagged as spam.", "error");
+
+return;
+
+}
+
+setFormState(true);
+
+showFormStatus("Sending your message...");
+
+try {
+
+const response = await fetch("https://formsubmit.co/ajax/gbquantum23@gmail.com", {
+
+method: "POST",
+
+headers: {
+
+"Content-Type": "application/x-www-form-urlencoded"
+
+},
+
+body: new URLSearchParams({
+
+name,
+
+email,
+
+subject: subject || "Website inquiry",
+
+message,
+
+_subject: `New message from GBsite: ${subject || "Website inquiry"}`,
+
+_template: "table",
+
+_captcha: "false",
+
+_honey: ""
+
+}).toString()
+
+});
+
+if (!response.ok) {
+
+throw new Error("Network response was not ok");
+
+}
+
+contactForm.reset();
+
+showFormStatus("Thanks! Your message has been sent.", "success");
+
+} catch (error) {
+
+showFormStatus("Sorry, the message could not be sent right now. Please email me directly instead.", "error");
+
+} finally {
+
+setFormState(false);
+
+}
+
+});
+
+}
+
+/*==================================================
 Current Year Footer
 ==================================================*/
 

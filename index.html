@@ -1014,35 +1014,24 @@ Office: Academic Block 6/314, Gandhinagar, Gujarat, India
 
 <div class="contact-form">
 
-<form>
+<form id="contact-form" novalidate>
 
-<input type="text"
+<input type="text" id="name" name="name" placeholder="Your Name" required>
 
-placeholder="Your Name">
+<input type="email" id="email" name="email" placeholder="Email" required>
 
-<input type="email"
+<input type="text" id="subject" name="subject" placeholder="Subject">
 
-placeholder="Email">
+<textarea id="message" name="message" rows="6" placeholder="Message" required></textarea>
 
-<input type="text"
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
-placeholder="Subject">
+<div id="form-status" class="form-status" aria-live="polite"></div>
 
-<textarea
+<button type="submit" class="btn-primary">
 
-rows="6"
-
-placeholder="Message">
-
-</textarea>
-
-<button
-
-type="submit"
-
-class="btn-primary">
-
-Send Message
+<span class="button-label">Send Message</span>
+<span class="button-spinner" aria-hidden="true"></span>
 
 </button>
 

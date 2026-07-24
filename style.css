@@ -1272,6 +1272,53 @@ min-height:180px;
 border:none;
 cursor:pointer;
 font-size:17px;
+position:relative;
+justify-content:center;
+}
+
+.contact-form button:disabled{
+ocacity:.8;
+cursor:wait;
+}
+
+.button-spinner{
+display:none;
+width:18px;
+height:18px;
+border:2px solid rgba(255,255,255,.35);
+border-top-color:#fff;
+border-radius:50%;
+margin-left:8px;
+animation:spin .8s linear infinite;
+}
+
+.contact-form button.is-loading .button-label{
+display:none;
+}
+
+.contact-form button.is-loading .button-spinner{
+display:inline-block;
+}
+
+.form-status{
+min-height:22px;
+margin-top:-6px;
+font-size:15px;
+font-weight:600;
+color:var(--muted);
+}
+
+.form-status.success{
+color:#34d399;
+}
+
+.form-status.error{
+color:#f87171;
+}
+
+@keyframes spin{
+from{transform:rotate(0deg);} 
+to{transform:rotate(360deg);}
 }
 
 /*==================================================
