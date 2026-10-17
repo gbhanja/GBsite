@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gbhanja.github.io/GBsite/sitemap.xml
