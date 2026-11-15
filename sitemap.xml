@@ -2,5 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gbhanja.github.io/GBsite/</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
+  <url>
+    <loc>https://gbhanja.github.io/GBsite/cv.html</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
+  <url>
+    <loc>https://gbhanja.github.io/GBsite/publications.html</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
+  <url>
+    <loc>https://gbhanja.github.io/GBsite/gallery.html</loc>
+    <lastmod>2026-11-15</lastmod>
   </url>
 </urlset>
