@@ -474,9 +474,9 @@ const message = (formData.get("message") || "").toString().trim();
 
 const honey = (formData.get("_honey") || "").toString().trim();
 
-if (!name || !email || !message) {
+if (!name || !email || !subject || !message) {
 
-showFormStatus("Please fill in your name, email, and message.", "error");
+showFormStatus("Please fill in your name, email, subject, and message.", "error");
 
 return;
 
